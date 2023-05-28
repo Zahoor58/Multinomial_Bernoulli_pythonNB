@@ -1,8 +1,8 @@
 ## Multinomial and Bernoulli Naive Bayes
-For understanding Multinomial and Bernoulli Naive Bayes, we will take a few sentences and classify them in two different classes. Each sentence will represent one document. In real world examples, every sentence could be a document, such as a mail, or a news article, a book review, a tweet etc. 
+For understanding Multinomial and Bernoulli Naive Bayes, I Have took a few sentences and classify them in two different classes. Each sentence is  represent one document. In real world examples, every sentence could be a document, such as a mail, or a news article, a book review, a tweet etc. 
 
-The analysis and mathematics involved doesn’t depend on the type of document we use. Therefore we have chosen a set of small sentences to demonstrate the calculation involved and to drive in the concept.
-Let us first look at the sentences and their classes. We have kept these sentences in file example_train.csv. Test sentences have been put in the file example_test.csv.
+The analysis and mathematics involved doesn’t depend on the type of document I used. Therefore I have chosen a set of small sentences to demonstrate the calculation involved and to drive in the concept.
+Let us first look at the sentences and their classes. I have kept these sentences in file example_train.csv. Test sentences have been put in the file example_test.csv.
 import numpy as np
 import pandas as pd
 import sklearn 
@@ -10,6 +10,8 @@ import sklearn
 docs=pd.read_csv('example_train1.csv')
 # text in column 1 and classification in column 2
 docs
+![Uploading image.png…]()
+
 So as you can see there are 5 documents (sentences) , 3 are of "education" class and 2 are of "cinema" class.
 # convert label to a numeric variable 
 docs['Class']=docs.Class.map({'cinema':0,'education':1})
@@ -24,7 +26,7 @@ print("Y")
 print(Y)
 Imagine breaking X in individual words and putting them all in a bag. Then we pick all the unique words from the bag one by one and make a dictionary of unique words. 
 
-This is called **vectorization of words**. We have the class ```CountVectorizer()``` in scikit learn to vectorize the words. Let us first see it in action before explaining it further.
+This is called **vectorization of words**. I have the class ```CountVectorizer()``` in scikit learn to vectorize the words. Let us first see it in action before explaining it further.
 
 #Create an object of CountVectorizer() class
 from sklearn.feature_extraction.text import  CountVectorizer
@@ -137,3 +139,9 @@ bnb.fit(X,Y)
 bnb.predict_proba(X_test)
 proba_bnb=bnb.predict_proba(X_test)
 pd.DataFrame(proba_bnb, columns=['Cinema','Education'])
+
+
+
+
+
+
